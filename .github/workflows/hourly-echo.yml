@@ -36,3 +36,16 @@ jobs:
           source .venv/bin/activate
           jupyter nbconvert --to python hourly_echo_tweet.ipynb
           ipython hourly_echo_tweet.py -1 ${{ secrets.TWITTER_CONSUMER_KEY }} -2 ${{ secrets.TWITTER_CONSUMER_SECRET }} -3 ${{ secrets.TWITTER_ACCESS_TOKEN }} -4 ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+
+      - name: Push Database
+        uses: crazy-max/ghaction-github-pages@v3.0.0
+        with:
+          target_branch: master
+          build_dir: db
+          keep_history: true # <== don't touch it
+          committer: Harsh Raj <harshraj8843@users.noreply.github.com>
+          author: Harsh Raj <harshraj8843@users.noreply.github.com>
+          commit_message: |
+            update database
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
