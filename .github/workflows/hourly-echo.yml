@@ -36,6 +36,11 @@ jobs:
           source .venv/bin/activate
           jupyter nbconvert --to python hourly_echo_tweet.ipynb
           ipython hourly_echo_tweet.py -1 ${{ secrets.TWITTER_CONSUMER_KEY }} -2 ${{ secrets.TWITTER_CONSUMER_SECRET }} -3 ${{ secrets.TWITTER_ACCESS_TOKEN }} -4 ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+      
+      - name: move database
+        run: |
+          mkdir -p db/db
+          mv db/quotes.db db/db/quotes.db
 
       - name: Push Database
         uses: crazy-max/ghaction-github-pages@v3.0.0
