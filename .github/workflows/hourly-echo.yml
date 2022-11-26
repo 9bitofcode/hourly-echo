@@ -7,7 +7,7 @@ on:
 
 jobs:
   post-tweet:
-    if: github.repository == '9bitofcode/hourly-echo'
+    if: github.repository == 'codinasion/hourly-echo'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

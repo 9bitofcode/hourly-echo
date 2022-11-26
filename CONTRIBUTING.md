@@ -1,4 +1,4 @@
-# Welcome to 9 Bit of Code contributing guide
+# Welcome to Codinasion contributing guide
 
 Thank you for investing your time in contributing to our project! Any contribution you make will be reflected on [twitter.com/hourly_echo][1] :sparkles:.
 
@@ -21,7 +21,7 @@ To get an overview of the project, read the [README][3]. Here are some resources
 
 #### Create a new issue
 
-If you want to add or modify 9bitofcode content, [search if an issue already exists][9]. If a related issue doesn't exist, you can open a new issue using a relevant [issue template][10].
+If you want to add or modify codinasion content, [search if an issue already exists][9]. If a related issue doesn't exist, you can open a new issue using a relevant [issue template][10].
 
 #### Solve an issue
 
@@ -61,14 +61,14 @@ When you're finished with the changes, create a pull request, also known as a PR
 - Fill the "Ready for review" template so that we can review your PR. This template helps reviewers understand your changes as well as the purpose of your pull request.
 - Don't forget to [link PR to issue][12] if you are solving one.
 - Enable the checkbox to [allow maintainer edits][13] so the branch can be updated for a merge.
-  Once you submit your PR, a 9bitofcode team member will review your proposal. We may ask questions or request for additional information.
+  Once you submit your PR, a codinasion team member will review your proposal. We may ask questions or request for additional information.
 - We may ask for changes to be made before a PR can be merged, either using [suggested changes][14] or pull request comments. You can apply suggested changes directly through the UI. You can make any other changes in your fork, then commit them to your branch.
 - As you update your PR and apply changes, mark each conversation as [resolved][15].
 - If you run into any merge issues, checkout this [git tutorial][16] to help you resolve merge conflicts and other issues.
 
 ### Your PR is merged
 
-Congratulations :tada::tada: The 9bitofcode team thanks you :sparkles:
+Congratulations :tada::tada: The codinasion team thanks you :sparkles:
 
 Once your PR is merged, your contributions will be publicly visible on the [twitter.com/hourly_echo][1]
 
@@ -81,9 +81,9 @@ Once your PR is merged, your contributions will be publicly visible on the [twit
 [5]: https://docs.github.com/en/get-started/quickstart/set-up-git (Set up Git)
 [6]: https://docs.github.com/en/get-started/quickstart/github-flow (GitHub flow)
 [7]: https://docs.github.com/en/get-started/quickstart/collaborating-with-issues-and-pull-requests (Collaborating with pull requests)
-[9]: https://github.com/9bitofcode/hourly-echo/issues "Issues"
-[10]: https://github.com/9bitofcode/hourly-echo/issues/new/choose "Issue Template"
-[11]: https://github.com/search?q=is:open+user:9bitofcode&type=Issues "9bitofcode Open Issues"
+[9]: https://github.com/codinasion/hourly-echo/issues "Issues"
+[10]: https://github.com/codinasion/hourly-echo/issues/new/choose "Issue Template"
+[11]: https://github.com/search?q=is:open+user:codinasion&type=Issues "codinasion Open Issues"
 [12]: https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue "Link PR to Issue"
 [13]: ttps://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork "Allow maintainers to edit"
 [14]: https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request "Suggest Changes"
