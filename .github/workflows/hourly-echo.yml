@@ -1,0 +1,51 @@
+name: Hourly Echo
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0/1 * * *"
+
+jobs:
+  post-tweet:
+    if: github.repository == 'codinasion/hourly-echo'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install apt dependencies
+        run: |
+          sudo apt install ffmpeg
+
+      # - name: Cache PIP packages
+      #   id: cache-pip-packages
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: .venv
+      #     key: pip-packages-${{ hashFiles('requirements.txt') }}
+
+      - name: Install PIP packages
+        # if: steps.cache-pip-packages.outputs.cache-hit != 'true'
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -r requirements.txt
+
+      - name: Post Tweet
+        run: |
+          source .venv/bin/activate
+          jupyter nbconvert --to python hourly_echo_tweet.ipynb
+          ipython hourly_echo_tweet.py -1 ${{ secrets.TWITTER_CONSUMER_KEY }} -2 ${{ secrets.TWITTER_CONSUMER_SECRET }} -3 ${{ secrets.TWITTER_ACCESS_TOKEN }} -4 ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+
+      - name: Push Database
+        uses: crazy-max/ghaction-github-pages@v3.0.0
+        with:
+          target_branch: db
+          build_dir: db
+          keep_history: false
+          committer: Harsh Raj <harshraj8843@users.noreply.github.com>
+          author: Harsh Raj <harshraj8843@users.noreply.github.com>
+          commit_message: |
+            upload database
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

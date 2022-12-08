@@ -1,0 +1,31 @@
+echo y | ffmpeg -i $1 -vf "\
+[in]\
+subtitles=output/quote.srt\
+:fontsdir='fonts'\
+:force_style='\
+FontName=$2,\
+Fontsize=36,\
+PrimaryColour=black,\
+BackColour=white,\
+Spacing=0.2,\
+Outline=0,\
+Shadow=0.75,\
+Alignment=10,\
+MarginL=5,\
+MarginV=25\
+'\
+,\
+subtitles=output/author.srt\
+:fontsdir='fonts'\
+:force_style='\
+FontName=$2,\
+Fontsize=16,\
+PrimaryColour=black,\
+BackColour=white,\
+Spacing=0.2,\
+Outline=0,\
+Shadow=0.75,\
+Alignment=2,\
+MarginL=5,\
+MarginV=25\
+'" -frames:v 1 -q:v 3 output/output.png
