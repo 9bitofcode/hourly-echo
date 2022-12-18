@@ -3,11 +3,11 @@ name: Hourly Echo
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0/1 * * *"
+    - cron: "0 * * * *"
 
 jobs:
   post-tweet:
-    if: github.repository == 'codinasion/hourly-echo'
+    if: github.repository == 'codinasion-archive/hourly-echo'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
